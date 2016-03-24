@@ -25,8 +25,17 @@ int sum3(int max){
 	}
 	return count;
 }
-int sum4(){
-	return 0;
+double sum4(int max){
+	int i, j; 
+	double sum=0, mul, div;
+	for(i=1;i<=max;i++){
+		div=(2*i-1);
+		mul=1;
+		for(j=div;j>0;j--){mul *= j;}
+		if(i%2){sum+=(i/mul);}
+		else{sum-=(i/mul);}
+	}
+	return sum;
 }
 int main(){
 	int result1 = sum1(5);
@@ -35,7 +44,7 @@ int main(){
 	printf("#2 = %d\n", result2);
 	int result3 = sum3(15);
 	printf("#3 = %d\n", result3);
-	int result4 = sum4(15);
-	printf("#4 = %d\n", result4);
+	double result4 = sum4(10);
+	printf("#4 = %f\n", result4);
 	return 0;
 }
